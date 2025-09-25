@@ -30,7 +30,7 @@ echo -e "${C_BLUE}--- System Information Dashboard ---${C_RESET}"
 echo -e "${C_GREEN}Hostname:${C_RESET}\t\t$HOSTNAME"
 echo -e "${C_GREEN}Uptime:${C_RESET}\t\t\t$UPTIME"
 echo -e "${C_GREEN}Current User:${C_RESET}\t\t$USER"
-echo -e "${C_GREEN}IP Address:${C_RESET}\t\t$IP_ADDR"
+echo -e "${C_GREEN}WSL Internal IP:${C_RESET}\t\t$IP_ADDR"
 
 echo
 
