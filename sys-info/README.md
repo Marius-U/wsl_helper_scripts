@@ -19,7 +19,7 @@ To use the script, navigate into this directory and run it.
 Hostname:           my-pc
 Uptime:             Up 2 hours, 30 minutes
 Current User:       username
-IP Address:         172.25.160.1
+WSL Internal IP:         172.25.160.1
 
 Memory Usage:       1.2G/7.7G (6.1G available)
 Root Disk Usage:    50G/251G (25% used)
