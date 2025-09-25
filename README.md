@@ -10,6 +10,8 @@ Currently, the following scripts are available:
 
 *   **[win-open](./win-open/)**: A script to open files or directories from the WSL command line in their default Windows application. 
 *   **[sys-info](./sys-info/)**: A script that displays a clean dashboard of your WSL system's key metrics like memory, CPU, and disk usage.
+*   **[quick-backup](./quick-backup/)**: A script that provides a simple way to create a compressed, timestamped backup of any file or directory.
+*   **[system-cleanup](./system-cleanup/)** A script that automates common system cleanup tasks in Debian-based Linux distributions (like Ubuntu) to help free up disk space.
 
 ---
 
