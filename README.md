@@ -1,77 +1,51 @@
-# WSL to Windows Opener (`win-open.sh`)
+# WSL Helper Scripts
 
-## Purpose
+This repository is a collection of useful scripts designed to improve and simplify the developer experience within the Windows Subsystem for Linux (WSL).
 
-This script provides a seamless way to open files and directories that are inside your WSL2 environment using their default Windows applications. It acts as a bridge between your Linux command-line workflow and the Windows GUI.
+---
 
-For example, you can open a JPEG file in the Windows Photo Viewer or a project directory in Windows Explorer directly from your WSL terminal.
+## Available Scripts
 
-## Functionality
+Currently, the following scripts are available:
 
-The script works by taking a single argument: a path to a file or directory within WSL.
+*   **[win-open](./win-open/)**: A script to open files or directories from the WSL command line in their default Windows application. 
+*   **[sys-info](./sys-info/)**: A script that displays a clean dashboard of your WSL system's key metrics like memory, CPU, and disk usage.
 
-1.  It first checks if an argument was provided.
-2.  It then uses the built-in `wslpath -w` utility to convert the provided Linux path (e.g., `/home/user/project`) into its corresponding Windows path (e.g., `\\wsl$\\Ubuntu\\home\\user\\project`).
-3.  Finally, it uses `cmd.exe /c start` to execute the Windows shell and open the converted path. The `start` command automatically uses the default application for that file type or opens the directory in File Explorer.
+---
 
-## Usage
+## How to Add a New Helper Script
 
-### 1. Make the script executable
+To contribute a new script, please follow these steps to ensure consistency across the project.
 
-First, you need to give the script execution permissions. Run the following command in your terminal:
+### 1. Use the Template
 
-```bash
-chmod +x win-open.sh
-```
-
-### 2. Run the script
-
-To open any file or directory, simply run the script with the path as the first argument.
-
-**Examples:**
-
-*   To open the current directory in Windows File Explorer:
-
-    ```bash
-    ./win-open.sh .
-    ```
-
-*   To open a specific file (e.g., a picture) in its default Windows application:
-
-    ```bash
-    ./win-open.sh /home/user/documents/image.png
-    ```
-
-*   To open a project folder in File Explorer:
-
-    ```bash
-    ./win-open.sh /home/user/projects/my-app
-    ```
-
-### 3. (Recommended) Make it globally accessible
-
-To make the script even more useful, you can move it to a directory that is in your system's `PATH`. This allows you to call it from any directory without having to type the `./` prefix.
-
-1.  Move the script to `/usr/local/bin`:
-
-    ```bash
-    sudo mv win-open.sh /usr/local/bin/win-open
-    ```
-
-2.  Now you can use it from anywhere:
-
-    ```bash
-    win-open image.jpg
-    ```
-
-You can also create a shorter alias in your `~/.bashrc` or `~/.zshrc` file:
+A `template_script` directory exists in this repository. To start a new script, make a copy of this directory:
 
 ```bash
-alias wo='win-open'
+cp -r template_script/ new_script_name/
 ```
 
-After adding the alias, reload your shell configuration (`source ~/.bashrc`) and you can use `wo` as a shortcut:
+Replace `new_script_name/` with the name of your script (e.g., `docker-manager/`).
+
+### 2. Rename the Files
+
+Navigate into your new directory and rename the script file:
 
 ```bash
-wo .
+cd new_script_name/
+mv template.sh new_script_name.sh
 ```
+
+### 3. Implement Your Script
+
+Open the `new_script_name.sh` file and add your script's logic. The template file contains comments to guide you.
+
+### 4. Document Your Script
+
+This is a critical step. Open the `README.md` file in your script's directory and fill out the template. Replace the bracketed placeholders (e.g., `[Script Name]`) with information specific to your script. A good README explains:
+
+*   The script's **purpose**.
+*   **Usage** instructions with clear examples.
+*   **Installation** steps for global access.
+
+By following these steps, you help keep the project organized and easy for others to use and contribute to.

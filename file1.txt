@@ -1,1 +1,0 @@
-this is just a gemini cli test.
